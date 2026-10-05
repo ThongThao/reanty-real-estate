@@ -1,13 +1,17 @@
 {
   "name": "reanty-real-estate",
   "version": "1.0.0",
-  "description": "Reanty - Luxury Real Estate Landing Page (Pure HTML & CSS)",
-  "main": "server.js",
+  "description": "Reanty - Luxury Real Estate Landing Page",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
-  "keywords": ["html5", "css3", "vanilla-js", "responsive", "real-estate"],
-  "author": "",
+  "keywords": [
+    "html5",
+    "css3",
+    "vanilla-js",
+    "responsive",
+    "real-estate"
+  ],
   "license": "ISC"
 }

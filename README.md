@@ -209,8 +209,11 @@ PORT=8080 node server.js
 
 ## Production URL
 
-- **Production Frontend:** `https://<project-name>.vercel.app` *(Assigned upon Vercel deployment)*
-- **Production API:** `https://<project-name>.vercel.app/api/properties`
+*(The live domain is generated automatically by Vercel upon deploying, typically `https://reanty-real-estate.vercel.app`)*
+
+- **Production Web UI:** `https://reanty-real-estate.vercel.app`
+- **Production Properties API:** `https://reanty-real-estate.vercel.app/api/properties`
+- **Production Services API:** `https://reanty-real-estate.vercel.app/api/services`
 
 ---
 
