@@ -1,0 +1,118 @@
+{
+  "featuredProperties": [
+    {
+      "id": 1,
+      "title": "The Stokes Appartment",
+      "location": "Cleveland, United States",
+      "price": "$2,32,120",
+      "numericPrice": 232120,
+      "category": "appartment",
+      "image": "./images/property-1.jpg",
+      "beds": 3,
+      "baths": 2,
+      "area": "1,200 sqft"
+    },
+    {
+      "id": 2,
+      "title": "The Stokes Appartment",
+      "location": "Cleveland, United States",
+      "price": "$2,32,120",
+      "numericPrice": 232120,
+      "category": "vila",
+      "image": "./images/property-2.jpg",
+      "beds": 4,
+      "baths": 3,
+      "area": "2,400 sqft"
+    },
+    {
+      "id": 3,
+      "title": "The Stokes Appartment",
+      "location": "Cleveland, United States",
+      "price": "$2,32,120",
+      "numericPrice": 232120,
+      "category": "land",
+      "image": "./images/property-3.jpg",
+      "beds": 2,
+      "baths": 2,
+      "area": "1,850 sqft"
+    }
+  ],
+  "unitHighlight": {
+    "unitNo": "9A",
+    "price": "$4,000",
+    "address": "242 Metric way",
+    "beds": 2,
+    "baths": 2,
+    "area": "500sqf",
+    "image": "./images/property-thumb.jpg"
+  },
+  "todaySellsProperties": [
+    {
+      "id": 1,
+      "name": "HOUSE 1",
+      "image": "./images/today-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "HOUSE 2",
+      "image": "./images/today-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "HOUSE 3",
+      "image": "./images/today-3.jpg"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Yunus Seyhan",
+      "role": "Postgraduate Student",
+      "quote": "We make sure you have a fine distance with the sickness. We make you never lose hope. We make sure you have with the sickness.",
+      "rating": 5,
+      "image": "./images/customer-avatar.jpg"
+    }
+  ],
+  "services": [
+    { "id": 1, "title": "Bed Rooms", "desc": "Desktop publishing software like aldus page maker including", "icon": "bed" },
+    { "id": 2, "title": "Swimming pool", "desc": "React creative agency amet, consec tetur adipiscing elit.", "icon": "pool", "featured": true },
+    { "id": 3, "title": "Copywriting content", "desc": "The standard chunk of used since the 1500s is reproduced", "icon": "file-text" },
+    { "id": 4, "title": "Smart Home", "desc": "The standard chunk of used since the 1500s is reproduced", "icon": "home" },
+    { "id": 5, "title": "Libarary area", "desc": "Desktop publishing software like aldus page maker including", "icon": "book-open" },
+    { "id": 6, "title": "Responsive Duity", "desc": "React creative agency amet, consec tetur adipiscing elit.", "icon": "shield-check" }
+  ],
+  "cities": [
+    { "name": "San Francisco, California", "image": "./images/city-sf.jpg" },
+    { "name": "Washington DC", "image": "./images/city-dc.jpg" },
+    { "name": "Chicago", "image": "./images/city-chicago.jpg" }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "How to rent a home very easily?",
+      "category": "Rentals",
+      "excerpt": "How to rent a home very easily in this pandemic situation. You can rent house through using our platfrom...",
+      "time": "3 years ago",
+      "author": "Mike Hesson",
+      "image": "./images/blog-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "How to rent a home very easily?",
+      "category": "Rentals",
+      "excerpt": "How to rent a home very easily in this pandemic situation. You can rent house through using our platfrom...",
+      "time": "3 years ago",
+      "author": "Mike Hesson",
+      "image": "./images/blog-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "How to rent a home very easily?",
+      "category": "Rentals",
+      "excerpt": "How to rent a home very easily in this pandemic situation. You can rent house through using our platfrom...",
+      "time": "3 years ago",
+      "author": "Mike Hesson",
+      "image": "./images/blog-3.jpg"
+    }
+  ]
+}
