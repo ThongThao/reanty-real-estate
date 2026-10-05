@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    return res.status(404).json({ status: 'error', message: 'API endpoint not found' });
+    return res.status(404).json({ success: false, status: 'error', message: 'API endpoint not found' });
   }
 
   // Static File Server
@@ -101,7 +101,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log(`=======================================================`);
-  console.log(`  🚀 Local Server (Web UI): http://localhost:${PORT}`);
-  console.log(`  📊 Local API Server: http://localhost:${PORT}/api/properties`);
+  console.log(`  🚀 Local Dev Server (Web UI): http://localhost:${PORT}`);
+  console.log(`  📊 Local Dev API Server: http://localhost:${PORT}/api/properties`);
   console.log(`=======================================================`);
 });

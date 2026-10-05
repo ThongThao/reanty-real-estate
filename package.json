@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Reanty - Luxury Real Estate Landing Page",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js"
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js"
   },
   "keywords": [
     "html5",

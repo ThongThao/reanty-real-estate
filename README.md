@@ -56,7 +56,7 @@ A pixel-perfect, modern luxury real estate landing page built from the ground up
 - **HTML5:** Semantic markup, accessibility labels, heading hierarchy (`h1`-`h4`), SEO metadata.
 - **CSS3:** Custom properties (design tokens), Flexbox, CSS Grid, media queries, smooth animations.
 - **JavaScript (ES6+):** Pure Vanilla JS for DOM manipulation, slider transitions, and asynchronous `fetch` requests.
-- **Node.js:** Native HTTP server (`server.js`) with zero third-party npm runtime dependencies.
+- **Node.js:** Native HTTP server (`dev-server.js`) for local development with zero third-party npm runtime dependencies.
 - **Vercel Serverless Functions:** Serverless endpoints located in `/api/*` for cloud deployment.
 
 ---
@@ -88,7 +88,7 @@ CV/
 ├── .gitignore                 # Git ignore rules
 ├── index.html                 # Main landing page markup (HTML5)
 ├── package.json               # NPM run scripts and metadata
-├── server.js                  # Standalone Node.js HTTP & REST API server
+├── dev-server.js              # Standalone Node.js local development server
 ├── vercel.json                # Vercel deployment configuration
 └── README.md                  # Project documentation (English)
 ```
@@ -122,7 +122,7 @@ CV/
 
    Or directly using Node.js:
    ```bash
-   node server.js
+   node dev-server.js
    ```
 
 3. **Access the web application:**
@@ -133,7 +133,7 @@ CV/
 
 ## API Endpoints
 
-The project provides RESTful API endpoints compatible with both local Node.js (`server.js`) and Vercel Serverless Functions (`/api/*`):
+The project provides RESTful API endpoints compatible with both local Node.js (`dev-server.js`) and Vercel Serverless Functions (`/api/*`):
 
 | Method | Endpoint | Description | Query / Body Parameters |
 | :--- | :--- | :--- | :--- |
@@ -202,7 +202,7 @@ No external API keys, database credentials, or secret tokens are required to run
 If you need to customize the local development server port, you may set the optional `PORT` environment variable:
 
 ```bash
-PORT=8080 node server.js
+PORT=8080 node dev-server.js
 ```
 
 ---
@@ -220,7 +220,7 @@ PORT=8080 node server.js
 ## Notes
 
 - **Figma Design Adherence:** The design adheres strictly to the reference screenshots with custom layered accent badges, exact button geometries (`Group 5439.svg` / `Group 5439-1.svg`), and proper icon orientations.
-- **Zero External Dependencies:** No `node_modules` required for running `server.js` or deploying to Vercel.
+- **Zero External Dependencies:** No `node_modules` required for running `dev-server.js` or deploying to Vercel.
 - **Asset Portability:** All images and SVG references use strict relative paths (`./assets/icons/...`, `./images/...`), ensuring seamless operation across any host, reverse proxy, or sub-path.
 - **SEO & Performance:** Semantic HTML5 outline, `loading="lazy"` on all below-the-fold assets, asynchronous font rendering, and `scroll-padding-top` offset for sticky navigation header.
 
