@@ -14,13 +14,15 @@ A pixel-perfect, modern luxury real estate landing page built from the ground up
 ## 📑 Table of Contents
 
 - [Overview](#overview)
-- [Key Features](#features)
+- [Key Features](#key-features)
 - [Technologies](#technologies)
 - [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
+- [Run locally](#run-locally)
 - [API Endpoints](#api-endpoints)
-- [Demo URL](#demo-url)
+- [Data](#data)
 - [Deployment](#deployment)
+- [Environment Variables](#environment-variables)
+- [Production URL](#production-url)
 - [Notes](#notes)
 
 ---
@@ -31,7 +33,7 @@ A pixel-perfect, modern luxury real estate landing page built from the ground up
 
 ---
 
-## Features
+## Key Features
 
 - **100% Vanilla Codebase:** No heavy frameworks (no React/Vue), no CSS preprocessors, and no utility libraries (Tailwind/Bootstrap). Ultra-fast load times and zero build steps required.
 - **Pixel-Perfect Figma Compliance:** Exact spacing, typography scaling, drop shadows, and border radii matching reference designs.
@@ -93,29 +95,29 @@ CV/
 
 ---
 
-## How to Run
+## Run locally
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (version 14.x or higher) installed on your system.
 
-### Local Development
+### Starting the Local Development Server
 
 1. **Clone or navigate to the project directory:**
    ```bash
    cd d:/CV
    ```
 
-2. **Start the local server:**
+2. **Run the local development server:**
 
    Using npm:
    ```bash
-   npm start
+   npm run dev
    ```
 
-   Or using npm dev script:
+   Or:
    ```bash
-   npm run dev
+   npm start
    ```
 
    Or directly using Node.js:
@@ -123,7 +125,7 @@ CV/
    node server.js
    ```
 
-3. **Access the application:**
+3. **Access the web application:**
    Open your browser and navigate to:
    👉 **`http://localhost:3000`**
 
@@ -131,7 +133,7 @@ CV/
 
 ## API Endpoints
 
-The project provides RESTful API endpoints compatible with both local Node.js and Vercel Serverless execution:
+The project provides RESTful API endpoints compatible with both local Node.js (`server.js`) and Vercel Serverless Functions (`/api/*`):
 
 | Method | Endpoint | Description | Query / Body Parameters |
 | :--- | :--- | :--- | :--- |
@@ -139,17 +141,31 @@ The project provides RESTful API endpoints compatible with both local Node.js an
 | `GET` | `/api/services` | Returns services catalog | None |
 | `GET` | `/api/testimonials` | Returns customer reviews and ratings | None |
 | `GET` | `/api/blog` | Returns real estate articles | None |
-| `POST` | `/api/contact` | Processes consultation inquiries | `{ name, email, message }` |
-| `POST` | `/api/newsletter` | Handles email newsletter subscriptions | `{ email, source }` |
+| `POST` | `/api/contact` | Processes consultation inquiries | `{ "name": "...", "email": "...", "message": "..." }` |
+| `POST` | `/api/newsletter` | Handles email newsletter subscriptions | `{ "email": "...", "source": "..." }` |
+
+*Example client request:*
+```javascript
+// Fetch properties by category
+const response = await fetch('/api/properties?category=appartment');
+const result = await response.json();
+
+// Submit contact inquiry
+const contactRes = await fetch('/api/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: 'John Doe', email: 'john@example.com', message: 'Hello!' })
+});
+```
 
 ---
 
-## Demo URL
+## Data
 
-- **Local Web UI:** [http://localhost:3000](http://localhost:3000)
-- **Local API Endpoint:** [http://localhost:3000/api/properties](http://localhost:3000/api/properties)
-- **Production Demo (Vercel):** `https://<your-project>.vercel.app` *(Replace with deployed URL)*
-- **Production API:** `https://<your-project>.vercel.app/api/properties`
+All mock datasets are centrally located in:
+- `data/properties.json`
+
+This file is read dynamically by the API functions via Node's filesystem and `process.cwd()` resolution, compatible with both local development and Vercel Serverless function runtime environments. No external database or persistent service is required.
 
 ---
 
@@ -157,7 +173,17 @@ The project provides RESTful API endpoints compatible with both local Node.js an
 
 The project is fully pre-configured for instant zero-configuration deployment to **Vercel**:
 
-### Option 1: Via Vercel CLI (Fastest)
+### Option 1: Via GitHub Integration (Recommended)
+
+1. Push the repository to GitHub:
+   ```bash
+   git push origin main
+   ```
+2. Navigate to [vercel.com/new](https://vercel.com/new).
+3. Select and import the `reanty-real-estate` repository.
+4. Click **Deploy**. Vercel will automatically detect `vercel.json`, host the static frontend on its Global Edge Network, and mount `/api/*` as serverless functions.
+
+### Option 2: Via Vercel CLI
 
 1. Authenticate with Vercel:
    ```bash
@@ -168,16 +194,23 @@ The project is fully pre-configured for instant zero-configuration deployment to
    npx vercel --prod
    ```
 
-### Option 2: Via GitHub Integration
+---
 
-1. Create a new repository on GitHub.
-2. Push the local commits:
-   ```bash
-   git remote add origin https://github.com/<username>/<repo-name>.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. Import the repository at [vercel.com/new](https://vercel.com/new) and click **Deploy**.
+## Environment Variables
+
+No external API keys, database credentials, or secret tokens are required to run this project.
+If you need to customize the local development server port, you may set the optional `PORT` environment variable:
+
+```bash
+PORT=8080 node server.js
+```
+
+---
+
+## Production URL
+
+- **Production Frontend:** `https://<project-name>.vercel.app` *(Assigned upon Vercel deployment)*
+- **Production API:** `https://<project-name>.vercel.app/api/properties`
 
 ---
 
