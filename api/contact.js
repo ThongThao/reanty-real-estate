@@ -11,11 +11,28 @@ module.exports = (req, res) => {
     return res.status(405).json({ status: 'error', message: 'Method Not Allowed' });
   }
 
-  const payload = req.body || {};
+  let payload = req.body;
+  if (typeof payload === 'string') {
+    try {
+      payload = JSON.parse(payload);
+    } catch (e) {
+      payload = {};
+    }
+  }
+  payload = payload || {};
+
+  const { name, email, message } = payload;
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      status: 'error',
+      message: 'All fields (name, email, message) are required.'
+    });
+  }
+
   return res.status(200).json({
     status: 'success',
     message: 'Thank you for contacting Reanty! We will get back to you shortly.',
-    received: payload,
+    received: { name, email, message },
     timestamp: new Date().toISOString()
   });
 };

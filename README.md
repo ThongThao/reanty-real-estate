@@ -4,106 +4,72 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=for-the-badge)](https://opensource.org/licenses/ISC)
 
-A pixel-perfect, modern luxury real estate landing page built from the ground up using **pure Vanilla HTML5, CSS3, and JavaScript** according to official Figma design guidelines. Features comprehensive multi-device responsiveness (Desktop, Tablet, and Mobile), local vector asset management, and a lightweight, zero-dependency Node.js HTTP & REST API server for testing.
+A pixel-perfect, modern luxury real estate landing page built from the ground up using **pure Vanilla HTML5, CSS3, and JavaScript** according to official Figma design guidelines for the Fastcoding VN assessment. Features comprehensive multi-device responsiveness (Desktop, Tablet, and Mobile SP down to 360px), local vector asset management, and native Vercel Serverless Functions paired with a zero-dependency Node.js local test server.
 
 ---
 
 ## 📑 Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Design System & Palette](#-design-system--palette)
-- [Technical Architecture](#-technical-architecture)
-- [REST API Endpoints](#-rest-api-endpoints)
-- [Project Directory Structure](#-project-directory-structure)
-- [Getting Started](#-getting-started)
-- [Page Sections](#-page-sections)
-- [Browser Compatibility](#-browser-compatibility)
-- [License](#-license)
+- [Overview](#overview)
+- [Key Features](#features)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [How to Run](#how-to-run)
+- [API Endpoints](#api-endpoints)
+- [Demo URL](#demo-url)
+- [Deployment](#deployment)
+- [Notes](#notes)
 
 ---
 
-## 🌟 Overview
+## Overview
 
-**Reanty** is a high-converting web presence for premium real estate agencies. Every component—from hero navigation to dynamic listing cards, interactive testimonial sliders, and consultation forms—has been strictly engineered to mirror the Figma visual design with mathematical precision, typography accuracy, and smooth micro-interactions.
+**Reanty** is a high-converting web landing page designed for premium luxury real estate agencies. Every component—from hero navigation to dynamic listing cards, interactive testimonial carousels, contact collage geometry, and consultation forms—has been strictly engineered to mirror the Figma visual design with mathematical precision, typography accuracy, and smooth micro-interactions.
 
 ---
 
-## ✨ Key Features
+## Features
 
-- **100% Vanilla Codebase:** No heavy frameworks (no React/Vue), no CSS preprocessors, and no utility libraries (Tailwind/Bootstrap). Fast load times and zero build steps required.
+- **100% Vanilla Codebase:** No heavy frameworks (no React/Vue), no CSS preprocessors, and no utility libraries (Tailwind/Bootstrap). Ultra-fast load times and zero build steps required.
 - **Pixel-Perfect Figma Compliance:** Exact spacing, typography scaling, drop shadows, and border radii matching reference designs.
-- **Full Responsive Design:**
-  - **Desktop (1200px – 1440px+):** Rich multi-column layouts, floating stats cards, interactive hover states.
+- **Comprehensive Multi-Device Responsiveness:**
+  - **Desktop (1200px – 1920px+):** Rich multi-column layouts, floating stats cards, interactive hover states.
   - **Tablet (768px – 1024px):** Adaptive 2-column grids and proportional container scaling.
-  - **Mobile / SP (≤ 768px & < 480px):** Off-canvas drawer navigation with animated hamburger toggle, single-column touch-friendly layouts, and horizontal swipe-friendly cards.
-- **Curated Vector Iconography:** Over 36 local SVG assets (`./assets/icons/`), including the official Iconly and Outline vector collections, without relying on external CDNs.
+  - **Mobile / Smartphone (360px – 768px):** Off-canvas drawer navigation with animated hamburger toggle, single-column touch-friendly layouts, scaled collage geometry, and zero horizontal scrolling.
+- **Curated Vector Iconography:** Over 36 local SVG assets (`./assets/icons/`), including the official Iconly and Outline vector collections, with zero reliance on external CDNs.
 - **Interactive UI Components:**
   - Dynamic testimonial review slider with synchronized directional navigation controls.
   - Property type category filter tabs (Apartment, Villa, Land).
-  - Quick-inquiry modal / contact forms with live JSON response processing.
-  - Newsletter subscription integration.
-- **Zero-Dependency Backend:** Built-in Node.js HTTP server delivering mock RESTful APIs for real estate data and contact submissions.
+  - Quick-inquiry modal and contact forms with live JSON response processing.
+  - Newsletter subscription integration in both projects banner and footer.
+- **Dual Runtime Support:** Built-in zero-dependency Node.js HTTP server for local development and native Serverless Functions for Vercel deployment.
 
 ---
 
-## 🎨 Design System & Palette
+## Technologies
 
-### Color Palette
-
-| Token | Hex Value | Usage |
-| :--- | :--- | :--- |
-| **Primary Coral** | `#FF5A3C` | CTAs, active indicators, accents, brand dot |
-| **Secondary Teal** | `#009688` | Trust badges, secondary accents |
-| **Deep Charcoal** | `#071C1F` | Primary headings, brand typography, dark cards |
-| **Body Slate** | `#5C727D` | Paragraph text, metadata, secondary labels |
-| **Background Light** | `#F7F8F9` | Section backgrounds, card containers |
-| **Border Gray** | `#E5E7EB` | Dividers, subtle borders, input outlines |
-
-### Typography
-
-- **Headings & Accents:** `Josefin Sans` (SemiBold 600, Bold 700)
-- **Body & Interface:** `Poppins` (Regular 400, Medium 500, SemiBold 600)
+- **HTML5:** Semantic markup, accessibility labels, heading hierarchy (`h1`-`h4`), SEO metadata.
+- **CSS3:** Custom properties (design tokens), Flexbox, CSS Grid, media queries, smooth animations.
+- **JavaScript (ES6+):** Pure Vanilla JS for DOM manipulation, slider transitions, and asynchronous `fetch` requests.
+- **Node.js:** Native HTTP server (`server.js`) with zero third-party npm runtime dependencies.
+- **Vercel Serverless Functions:** Serverless endpoints located in `/api/*` for cloud deployment.
 
 ---
 
-## ⚙️ Technical Architecture
+## Project Structure
 
-1. **Semantic HTML5:** Built using appropriate semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<aside>`) to ensure strong SEO, readability, and accessibility.
-2. **Modern CSS3:**
-   - Modular CSS variables defined in `:root`.
-   - CSS Grid and Flexbox for fluid layouts.
-   - Separate `responsive.css` sheet dedicated to breakpoint overrides.
-3. **Vanilla JavaScript (ES6+):**
-   - Event-driven mobile drawer toggle.
-   - Client-side filtering logic for featured listings.
-   - Asynchronous `fetch()` requests for form submissions and newsletter signups.
-4. **Local Asset Architecture:**
-   - All assets reference relative paths (`./assets/icons/...`, `./images/...`), guaranteeing portability across local and production environments.
-
----
-
-## 🔌 REST API Endpoints
-
-The native Node.js mock server (`server.js`) exposes the following endpoints:
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/api/properties` | Returns a list of properties with price, specs, and location |
-| `GET` | `/api/services` | Returns the services catalog |
-| `GET` | `/api/testimonials` | Returns customer reviews and ratings |
-| `GET` | `/api/blog` | Returns the latest real estate articles |
-| `POST` | `/api/contact` | Handles inquiry submissions with JSON validation |
-| `POST` | `/api/newsletter` | Processes newsletter email subscriptions |
-
----
-
-## 📂 Project Directory Structure
-
-```
-d:/CV/
+```text
+CV/
+├── api/                       # Vercel Serverless Functions (REST API)
+│   ├── blog.js                # GET /api/blog
+│   ├── contact.js             # POST /api/contact
+│   ├── newsletter.js          # POST /api/newsletter
+│   ├── properties.js          # GET /api/properties
+│   ├── services.js            # GET /api/services
+│   └── testimonials.js        # GET /api/testimonials
 ├── assets/
 │   └── icons/                 # Curated local vector assets (SVG)
 │       ├── Iconly/Bulk/       # Official Iconly arrow & navigation vectors
@@ -113,28 +79,29 @@ d:/CV/
 │   ├── style.css              # Core design system, variables, layouts, and components
 │   └── responsive.css         # Breakpoint rules for Tablet and Mobile (SP)
 ├── data/
-│   └── properties.json        # Mock property dataset for local API
-├── images/                    # Local high-resolution property and avatar photography
+│   └── properties.json        # Mock property dataset for APIs
+├── images/                    # Local high-resolution photography assets
 ├── js/
 │   └── main.js                # UI interactivity, mobile menu, slider, and API handlers
+├── .gitignore                 # Git ignore rules
 ├── index.html                 # Main landing page markup (HTML5)
+├── package.json               # NPM run scripts and metadata
 ├── server.js                  # Standalone Node.js HTTP & REST API server
-├── package.json               # Project metadata and run scripts
+├── vercel.json                # Vercel deployment configuration
 └── README.md                  # Project documentation (English)
 ```
 
 ---
 
-## 🚀 Getting Started
+## How to Run
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 14.x or higher recommended)
-- A modern web browser (Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari)
+- [Node.js](https://nodejs.org/) (version 14.x or higher) installed on your system.
 
-### Local Installation & Startup
+### Local Development
 
-1. **Clone or open the project directory:**
+1. **Clone or navigate to the project directory:**
    ```bash
    cd d:/CV
    ```
@@ -146,49 +113,83 @@ d:/CV/
    npm start
    ```
 
+   Or using npm dev script:
+   ```bash
+   npm run dev
+   ```
+
    Or directly using Node.js:
    ```bash
    node server.js
    ```
 
-3. **View the application:**
+3. **Access the application:**
    Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+   👉 **`http://localhost:3000`**
 
 ---
 
-## 📑 Page Sections
+## API Endpoints
 
-1. **Top Bar & Navigation Header:** Contact info, social media handles, `Reanty.` brand logo with vector dot accent, main navigation menu, and user authentication action triggers.
-2. **Hero Section:** High-impact heading with directional vector curve, membership badge, thumbnail slider preview with active indicators, floating revenue growth statistics card, and "How it works" badge.
-3. **Guide Cards:** Three specialized real estate guides (Buyer Guide, Renter Guide, Seller Guide) with interactive hover elevations.
-4. **Dream Living Spaces:** Split montage showcase with property rating badges and agency milestones.
-5. **Today Sells Properties:** Curated property showcase with checklist advantages and slider controls.
-6. **Services Catalog:** 6 centered service cards featuring enlarged Figma vector icons and link actions.
-7. **Featured Property:** Dynamic tabbed filters (`Apartment`, `Villa`, `Land`) with floating price/action cards using custom action button vectors (`Group 5439.svg` / `Group 5439-1.svg`).
-8. **Unit Highlight Banner:** Immersive background visual with circular unit badge and floating amenity specification card.
-9. **Testimonials Carousel:** Customer review carousel with circular navigation buttons (`Arrow - Right.svg`), quote mark, 5-star rating, and client details.
-10. **Projects & Cities:** Geographic overview of properties across major metropolitan hubs with integrated newsletter subscription form.
-11. **Blog & News:** Expert property advice articles with category tags, author metadata, and read-more actions.
-12. **Contact Section:** Consultation benefits checklist, stepped collage with layered accent squares, and clean contact submission form.
-13. **Footer:** Brand identity, quick navigation links, customer support details, and copyright notice.
+The project provides RESTful API endpoints compatible with both local Node.js and Vercel Serverless execution:
+
+| Method | Endpoint | Description | Query / Body Parameters |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/properties` | Returns featured property listings | `?category=appartment\|vila\|land` |
+| `GET` | `/api/services` | Returns services catalog | None |
+| `GET` | `/api/testimonials` | Returns customer reviews and ratings | None |
+| `GET` | `/api/blog` | Returns real estate articles | None |
+| `POST` | `/api/contact` | Processes consultation inquiries | `{ name, email, message }` |
+| `POST` | `/api/newsletter` | Handles email newsletter subscriptions | `{ email, source }` |
 
 ---
 
-## 🌐 Browser Compatibility
+## Demo URL
 
-Tested and fully supported across all modern evergreen browsers:
+- **Local Web UI:** [http://localhost:3000](http://localhost:3000)
+- **Local API Endpoint:** [http://localhost:3000/api/properties](http://localhost:3000/api/properties)
+- **Production Demo (Vercel):** `https://<your-project>.vercel.app` *(Replace with deployed URL)*
+- **Production API:** `https://<your-project>.vercel.app/api/properties`
 
-- Google Chrome (latest)
-- Microsoft Edge (latest)
-- Mozilla Firefox (latest)
-- Apple Safari (latest)
-- Mobile Safari & Chrome for Android
+---
+
+## Deployment
+
+The project is fully pre-configured for instant zero-configuration deployment to **Vercel**:
+
+### Option 1: Via Vercel CLI (Fastest)
+
+1. Authenticate with Vercel:
+   ```bash
+   npx vercel login
+   ```
+2. Deploy to Production:
+   ```bash
+   npx vercel --prod
+   ```
+
+### Option 2: Via GitHub Integration
+
+1. Create a new repository on GitHub.
+2. Push the local commits:
+   ```bash
+   git remote add origin https://github.com/<username>/<repo-name>.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. Import the repository at [vercel.com/new](https://vercel.com/new) and click **Deploy**.
+
+---
+
+## Notes
+
+- **Figma Design Adherence:** The design adheres strictly to the reference screenshots with custom layered accent badges, exact button geometries (`Group 5439.svg` / `Group 5439-1.svg`), and proper icon orientations.
+- **Zero External Dependencies:** No `node_modules` required for running `server.js` or deploying to Vercel.
+- **Asset Portability:** All images and SVG references use strict relative paths (`./assets/icons/...`, `./images/...`), ensuring seamless operation across any host, reverse proxy, or sub-path.
+- **SEO & Performance:** Semantic HTML5 outline, `loading="lazy"` on all below-the-fold assets, asynchronous font rendering, and `scroll-padding-top` offset for sticky navigation header.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [ISC License](https://opensource.org/licenses/ISC).
+This project is open-source and available under the [ISC License](https://opensource.org/licenses/ISC).

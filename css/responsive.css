@@ -495,4 +495,37 @@
     left: 15px;
     max-width: none;
   }
+
+  /* Contact Collage Responsiveness */
+  .contact-collage {
+    height: 230px;
+    max-width: 100%;
+    transform: scale(0.78);
+    transform-origin: top left;
+    margin-bottom: -30px;
+  }
 }
+
+/* --- Ultra Small Phones (≤ 375px) --- */
+@media screen and (max-width: 375px) {
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 25px;
+  }
+
+  .dream__images {
+    transform: scale(0.85);
+    transform-origin: top left;
+    height: 310px;
+  }
+
+  .contact-collage {
+    height: 200px;
+    transform: scale(0.68);
+    margin-bottom: -50px;
+  }
+}
+

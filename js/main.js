@@ -199,20 +199,20 @@ function initForms() {
       const message = document.getElementById('contact-message').value.trim();
 
       if (!name || !email || !message) {
-        showToast('Vui lòng điền đầy đủ tất cả các trường thông tin.', 'error');
+        showToast('Please fill in all required fields.', 'error');
         return;
       }
 
       // Email validation regex
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        showToast('Vui lòng nhập địa chỉ email hợp lệ.', 'error');
+        showToast('Please enter a valid email address.', 'error');
         return;
       }
 
       // Visual feedback
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span>Đang gửi...</span>';
+      submitBtn.innerHTML = '<span>Sending...</span>';
       submitBtn.disabled = true;
 
       try {
@@ -225,14 +225,14 @@ function initForms() {
 
         const result = await response.json();
         if (response.ok) {
-          showToast('Cảm ơn bạn! Thông tin liên hệ đã được gửi thành công.', 'success');
+          showToast('Thank you! Your inquiry has been sent successfully.', 'success');
           contactForm.reset();
         } else {
-          showToast(result.message || 'Gửi thất bại, vui lòng thử lại.', 'error');
+          showToast(result.message || 'Submission failed, please try again.', 'error');
         }
       } catch (err) {
         // Fallback if data server is running offline or static-only
-        showToast('Cảm ơn bạn! Thông tin liên hệ đã được tiếp nhận.', 'success');
+        showToast('Thank you! Your inquiry has been received.', 'success');
         contactForm.reset();
       } finally {
         submitBtn.innerHTML = originalText;
@@ -257,10 +257,10 @@ function initForms() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, source: 'projects_bar' })
         });
-        showToast('Đăng ký nhận bản tin thành công!', 'success');
+        showToast('Subscribed to newsletter successfully!', 'success');
         projectsNewsletter.reset();
       } catch (err) {
-        showToast('Đăng ký nhận bản tin thành công!', 'success');
+        showToast('Subscribed to newsletter successfully!', 'success');
         projectsNewsletter.reset();
       }
     });
@@ -282,10 +282,10 @@ function initForms() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, source: 'footer' })
         });
-        showToast('Đăng ký bản tin Reanty thành công!', 'success');
+        showToast('Subscribed to Reanty newsletter successfully!', 'success');
         footerNewsletter.reset();
       } catch (err) {
-        showToast('Đăng ký bản tin Reanty thành công!', 'success');
+        showToast('Subscribed to Reanty newsletter successfully!', 'success');
         footerNewsletter.reset();
       }
     });
